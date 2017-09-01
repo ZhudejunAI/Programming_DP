@@ -18,8 +18,8 @@ class PTBModel(object):
         self._input = input_
         batch_size = input_.batch_size
         num_steps = input_.batch_size
-        size = config.hidden_size
-        vocab_size = config.vocab_size
+        size = config.hidden_size    #隐藏层的大小
+        vocab_size = config.vocab_size   #词典的大小
 
         def lstm_cell():
             return tf.contrib.rnn.BasicLSTMCell(size, forget_bias=0.0, state_is_tuple=True)
